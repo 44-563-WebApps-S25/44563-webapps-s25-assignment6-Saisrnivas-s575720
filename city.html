@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <script>
+            let oops = 0;
+            let found = 0;
+          
+            function checkCity() {
+              const secretCity = document.getElementById('secret-city').value;
+              const guessedCity = document.getElementById('guess-city').value;
+          
+              if (secretCity === guessedCity) {
+                found++;
+                alert('GotCha');
+              } else {
+                oops++;
+                alert('Awe');
+              }
+          
+              document.getElementById('result').innerHTML = `Found: ${found}, Oops: ${oops}`;
+            }
+          </script>
+        <title>City Game by Sai Srinivas Kanneganti</title>
+        <h1>City Game by Sai Srinivas Kanneganti</h1>
+        <form>
+            <label for="secret-city">Where in the world:</label>
+            <input type="password" id="secret-city" value="San Diego"><br><br>
+            
+            <label for="guess-city">Guess the city:</label>
+            <input type="text" id="guess-city"><br><br>
+            
+            <button type="button" onclick="checkCity()">Check the guess</button>
+          </form>
+          <p id="result"></p>
+    </body>
+</html>
