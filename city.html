@@ -4,14 +4,17 @@
             let oops = 0;
             let found = 0;
           
-            function checkCity() {
+            function checkCity() 
+            {
               const secretCity = document.getElementById('secret-city').value;
               const guessedCity = document.getElementById('guess-city').value;
           
-              if (secretCity === guessedCity) {
+              if (secretCity === guessedCity) 
+              {
                 found++;
                 alert('GotCha');
-              } else {
+              } else 
+              {
                 oops++;
                 alert('Awe');
               }
@@ -31,5 +34,35 @@
             <button type="button" onclick="checkCity()">Check the guess</button>
           </form>
           <p id="result"></p>
+         <br>
+
+         <div id="image-container">
+          <img src="pet1.jpg" alt="Pet 1" width="150" height="150" onclick="updatePic()">
+          <img src="pet2.jpg" alt="Pet 2" width="150" height="150" onclick="updatePic()">
+          <img src="pet3.jpg" alt="Pet 3" width="150" height="150" onclick="updatePic()">
+      </div>
+<script>
+
+      let usePic = 1;
+
+function updatePic() {
+    const img = document.querySelector('#image-container img');
+    switch (usePic) {
+        case 1:
+            img.src = 'pet2.jpg';
+            usePic = 2;
+            break;
+        case 2:
+            img.src = 'pet3.jpg';
+            usePic = 3;
+            break;
+        case 3:
+            img.src = 'pet1.jpg';
+            usePic = 1;
+            break;
+
+    }
+}
+</script>
     </body>
 </html>
